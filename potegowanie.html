@@ -1,0 +1,63 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./style.css">
+<style>
+    body{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .container{
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<title>POTĘGOWANIE</title>
+</head>
+
+<body>
+
+<div class="container">
+    <a href="glowna.html"><img src="https://anty150.github.io/Zadanie-/baner.jpg" alt="baner"></a>
+    <div class="wrapper">
+        <div>
+            MENU
+            <ul class="menu">
+                <li> - <a href="mnozenie.html">proste działania</a></li>
+                <li> - <a href="potegowanie.html">potęgowanie</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Potęgowanie</h1>
+            <i>Podaj podstawę potęgi: </i> <input type="text" id="number" spellcheck="false" data-ms-editor="true"> <br> <br>
+            <i>Podaj dodatni, całkowity wykładnik potęgi: </i> <input type="text" id="number2" spellcheck="false" data-ms-editor="true"> <br> <br>
+            <button onclick="potegowanie()">POTĘGOWANIE</button>
+            <br> <br> <i id="wynik"></i>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+let value = document.getElementById("number");
+let value2 = document.getElementById("number2");
+let wynik = document.getElementById("wynik");
+
+function potegowanie() {
+    if (value.value == "" || value2.value == "") {
+        wynik.innerHTML = "Wpisz podstawę i wykładnik potęgi.";
+    } else {
+        let number = parseInt(value.value);
+        let number2 = parseInt(value2.value);
+        let result;
+        if (number2 < 0) {
+            wynik.innerHTML = "Wykładnik potęgi musi być dodatni.";
+        } else {
+            result = Math.pow(number, number2);
+            wynik.innerHTML = "Wynik działania wynosi: " + result;
+        }
+    }
+}
+</script>
